@@ -14,9 +14,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { ContainerComponent } from './shared/container/container.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { CardDepoimentosComponent } from './shared/card-depoimentos/card-depoimentos.component';
 import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonToggleModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

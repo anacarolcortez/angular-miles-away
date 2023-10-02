@@ -1,1 +1,19 @@
-<p>form-busca works!</p>
+<app-card variant="secondary" class="form-busca">
+  <form>
+    <h2>Passagens</h2>
+    <div class="flex-container">
+      <mat-button-toggle-group aria-label="tipo de passagem">
+        <mat-button-toggle>
+          <mat-icon>check</mat-icon>
+          IDA E VOLTA</mat-button-toggle>
+        <mat-button-toggle>
+          <mat-icon></mat-icon>
+          SÓ IDA</mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-chip-listbox aria-label="seleção de passagens">
+        <mat-chip-option selected="true">1 adulto</mat-chip-option>
+        <mat-chip-option>econômica</mat-chip-option>
+      </mat-chip-listbox>
+    </div>
+  </form>
+</app-card>
