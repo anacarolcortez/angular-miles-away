@@ -26,6 +26,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ModalComponent } from './shared/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
+import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
 
 
 @NgModule({
@@ -41,7 +44,9 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
     CardDepoimentosComponent,
     FormBuscaComponent,
     ModalComponent,
-    BotaoControleComponent
+    BotaoControleComponent,
+    PromocoesComponent,
+    DepoimentosComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,8 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

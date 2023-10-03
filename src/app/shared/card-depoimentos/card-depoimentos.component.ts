@@ -1,4 +1,5 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Depoimento } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-card-depoimentos',
@@ -6,6 +7,5 @@ import { Component, Inject } from '@angular/core';
   styleUrls: ['./card-depoimentos.component.scss']
 })
 export class CardDepoimentosComponent {
-  depoimento: String = "O aplicativo simplificou demais a minha viagem, desde a escolha do destino até a compra do pacote. Recomendo muito!"
-  autor: String = "Lorem Ipsum"
+  @Input() dep!: Depoimento
 }
