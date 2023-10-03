@@ -29,7 +29,7 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
 import { HttpClientModule } from '@angular/common/http';
 import { PromocoesComponent } from './pages/home/promocoes/promocoes.component';
 import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,8 @@ import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.compo
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
