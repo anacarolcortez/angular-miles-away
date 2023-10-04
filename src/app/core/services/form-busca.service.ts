@@ -7,11 +7,21 @@ import { FormControl, FormGroup } from '@angular/forms';
 
 export class FormBuscaService {
 
-  formGroup: FormGroup
+  formBusca: FormGroup
 
   constructor() {
-    this.formGroup = new FormGroup({
-      somenteIda: new FormControl(false)
+    this.formBusca = new FormGroup({
+      somenteIda: new FormControl(false),
+      origem: new FormControl(),
+      destino: new FormControl()
     })
+  }
+
+  obterControle(nome:string): FormControl {
+    const control = this.formBusca.get(nome);
+    if (!control) {
+      throw new Error(`FormControl com nome "${nome}" não existe.`);
+    }
+    return control as FormControl;
   }
 }

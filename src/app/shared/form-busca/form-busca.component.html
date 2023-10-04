@@ -1,13 +1,13 @@
 <app-card variant="secondary" class="form-busca">
-  <form [formGroup]="formBuscaService.formGroup">
+  <form [formGroup]="formBuscaService.formBusca">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group aria-label="tipo de passagem" formControlName="somenteIda">
         <mat-button-toggle [value]="false">
-          <mat-icon *ngIf="!formBuscaService.formGroup.get('somenteIda')?.value">check</mat-icon>
+          <mat-icon *ngIf="!formBuscaService.formBusca.get('somenteIda')?.value">check</mat-icon>
           IDA E VOLTA</mat-button-toggle>
         <mat-button-toggle [value]="true">
-          <mat-icon *ngIf="formBuscaService.formGroup.get('somenteIda')?.value">check</mat-icon>
+          <mat-icon *ngIf="formBuscaService.formBusca.get('somenteIda')?.value">check</mat-icon>
           SÓ IDA</mat-button-toggle>
       </mat-button-toggle-group>
       <mat-chip-listbox (click)="openDialog()" aria-label="seleção de passagens">
@@ -16,11 +16,19 @@
       </mat-chip-listbox>
     </div>
     <div class="flex-container">
-      <app-dropdown-uf label="Origem" matPrefix="flight_takeoff"></app-dropdown-uf>
+      <app-dropdown-uf
+        label="Origem"
+        matPrefix="flight_takeoff"
+        [control]="formBuscaService.obterControle('origem')">
+      </app-dropdown-uf>
       <button mat-icon-button>
         <mat-icon>sync_alt</mat-icon>
       </button>
-      <app-dropdown-uf label="Destino" matPrefix="flight_land"></app-dropdown-uf>
+      <app-dropdown-uf
+        label="Destino"
+        matPrefix="flight_land"
+        [control]="formBuscaService.obterControle('destino')">
+      </app-dropdown-uf>
       <mat-form-field class="input-container" appearance="outline">
         <mat-label>Data de ida</mat-label>
         <input matInput [matDatepicker]="pickerIda">
