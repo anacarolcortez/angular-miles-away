@@ -1,5 +1,5 @@
 <app-card variant="secondary" class="form-busca">
-  <form [formGroup]="formBuscaService.formBusca">
+  <form [formGroup]="formBuscaService.formBusca" (ngSubmit)="buscar()">
     <h2>Passagens</h2>
     <div class="flex-container">
       <mat-button-toggle-group aria-label="tipo de passagem" formControlName="somenteIda">
@@ -10,9 +10,9 @@
           <mat-icon *ngIf="formBuscaService.formBusca.get('somenteIda')?.value">check</mat-icon>
           SÓ IDA</mat-button-toggle>
       </mat-button-toggle-group>
-      <mat-chip-listbox (click)="openDialog()" aria-label="seleção de passagens">
-        <mat-chip-option selected="true">1 adulto</mat-chip-option>
-        <mat-chip-option>econômica</mat-chip-option>
+      <mat-chip-listbox (click)="formBuscaService.openDialog()" aria-label="seleção de passagens">
+        <mat-chip-option selected="true">{{formBuscaService.getDescricaoPassageiros()}}</mat-chip-option>
+        <mat-chip-option>{{formBuscaService.obterControle('tipo').value}}</mat-chip-option>
       </mat-chip-listbox>
     </div>
     <div class="flex-container">
@@ -41,7 +41,8 @@
         <mat-datepicker-toggle matIconSuffix [for]="pickerVolta"></mat-datepicker-toggle>
         <mat-datepicker #pickerVolta></mat-datepicker>
       </mat-form-field>
-      <button mat-flat-button color="primary">BUSCAR</button>
+      <button mat-flat-button color="primary" (click)="formBuscaService.trocarOrigemDestino()">
+        <mat-icon>sync_alt</mat-icon> BUSCAR</button>
     </div>
   </form>
 </app-card>
